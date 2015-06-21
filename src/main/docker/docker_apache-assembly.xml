@@ -1,0 +1,29 @@
+<assembly>
+  <baseDirectory>/</baseDirectory>
+  <id>docker_tomcat-assembly</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+
+  <files>
+  </files>
+
+        <fileSets>
+              <fileSet>  
+                     <directory>${project.basedir}/scripts</directory>
+                     <outputDirectory>/opt/dochack/scripts</outputDirectory>
+                     <fileMode>0755</fileMode>
+              </fileSet>
+        </fileSets>
+
+  <dependencySets>
+    <dependencySet>
+        <unpack>true</unpack>
+        <scope>runtime</scope>
+        <outputDirectory>/</outputDirectory>
+        <includes>
+            <include>org.docker.hackathon:apache:jar</include>
+        </includes>
+    </dependencySet>
+  </dependencySets>
+</assembly>
